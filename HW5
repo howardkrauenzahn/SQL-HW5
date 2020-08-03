@@ -1,0 +1,93 @@
+ select count(*) from vendors  
+ 6   
+ 7   
+ 8   
+ 9    
+ 10    
+ 11   
+ 12   select * into vendorscopy from vendors  
+ 13   
+ 14    
+ 15    
+ 16  
+ 17   
+ 18   select VendorName,VendorAddress1,VendorAddress2,VendorCity,VendorState into  
+ 19   VendorContact from vendors 
+ 20   
+ 21   
+ 22    
+ 23    
+ 24   
+ 25   select VendorName,VendorcontactFname,VendorContactLName from vendors order by VendorName desc 
+ 26   
+ 27   
+ 28
+ 29   
+ 30   select * from vendors where defaultAccountNo=400 order by vendorstate ,vendorzipcode  
+ 31   
+ 32   
+ 33
+ 34
+ 35   
+ 36   select * from vendors where defaultAccountNo not between 500 and 700  
+ 37   order by defaultAccountNo desc 
+ 38   
+ 39   
+ 40   
+ 41   select * from vendors where vendorphone is null  
+ 42   
+ 43   
+ 44   
+ 45
+ 46   
+ 47   Select * from VENDORS WHERE DefaultTermsID <>3 
+ 48   
+ 49   
+ 50
+ 51
+ 52   
+ 53   select VendorContactFName as FirstName,VendorContactLName as LastName 
+54   from vendors order by FirstName 
+55   
+56
+57
+58   
+59   select VendorName +','+ VendorCity +',' +VendorState as [Vendor Info]  
+60   from vendors 
+61   
+62    
+63   
+64    
+65   
+66   select * from vendors where DefaultTermsId>2 and DefaultAccountNo <500 
+67   
+68    
+69     
+70   
+71   
+72   select * from vendors where vendorid in (122,123)  
+73   
+74    
+75   
+76    
+77   
+78   select * from vendors where VendorContactLName like '[A-C]%'  
+79   OR VendorContactLName LIKE 'E%' 
+80    
+81   select * from vendors where VendorContactLName like '[A-E]%' 
+82   AND VendorContactLName NOT LIKE 'D%' 
+83   
+84    
+85   
+86   
+87    
+88   
+89   
+90   
+91    
+92   
+93   
+94   
+95   SELECT invoicetotal, 0.1*InvoiceTotal AS [10%], InvoiceTotal+ 0.1*InvoiceTotal 
+96   AS [Plus 10%] FROM Invoices 
+97   where InvoiceTotal-PaymentTotal-CreditTotal>200 order by InvoiceTotal desc  
